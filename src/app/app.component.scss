@@ -1,0 +1,21 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+:host {
+  flex-grow: 1;
+  flex-direction: column;
+  display: flex;
+}
+
+.mainToolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.toolbarItem {
+
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
