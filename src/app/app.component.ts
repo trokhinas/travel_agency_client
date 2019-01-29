@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {GlobalDataService} from './global-data.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'travelAgencyClient';
+
+  constructor(private globalData: GlobalDataService) {}
+
+  public isLoggedIn() {
+    return this.globalData.isLogIn();
+  }
 }

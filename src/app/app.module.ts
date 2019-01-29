@@ -12,12 +12,14 @@ import {MatListModule} from '@angular/material';
 
 import { TourComponent } from './tour/tour.component';
 import { TourListComponent } from './tour/tour-list/tour-list.component';
+import { TourDetailsComponent } from './tour/tour-details/tour-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TourComponent,
-    TourListComponent
+    TourListComponent,
+    TourDetailsComponent
   ],
   imports: [
     BrowserModule,

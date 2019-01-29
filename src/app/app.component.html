@@ -6,8 +6,13 @@
   </div>
 
   <div class="toolbarItem">
-    <a mat-button routerLink="/login"  >  Войти  </a>
-    <a mat-button routerLink="/registration"  >  Регистрация  </a>
+    <div *ngIf="!isLoggedIn() else profile">
+      <a mat-button routerLink="/login"  >  Войти  </a>
+      <a mat-button routerLink="/registration"  >  Регистрация  </a>
+    </div>
+    <ng-template #profile>
+      <a mat-button routerLink="/profile"  >  Профиль  </a>
+    </ng-template>
   </div>
 
 
