@@ -1,0 +1,23 @@
+
+
+.tourMain {
+}
+
+.tourInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.tourInfoHeader{
+  flex-grow: 1;
+}
+
+.tourInfoDescription {
+}
+
+
+.tourInfoFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

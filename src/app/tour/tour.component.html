@@ -1,0 +1,29 @@
+<div class="tourMain">
+
+
+  <div >
+    <mat-card class="tourInfo">
+      <mat-card-header class="tourInfoHeader">
+        <mat-card-title>
+          {{tour.name}}
+        </mat-card-title>
+      </mat-card-header>
+
+      <mat-card-content *ngIf="tour.description" class="tourInfoDescription">
+        Описание: {{tour.description}}
+      </mat-card-content>
+
+      <mat-card-footer class="tourInfoFooter">
+        <div>
+          {{tour.startDate | date: 'dd/MM/yyyy'}} - {{tour.endDate | date: 'dd/MM/yyyy'}}
+        </div>
+        <div>
+          Осталось мест: {{tour.countLimit}}
+        </div>
+      </mat-card-footer>
+    </mat-card>
+
+  </div>
+
+
+</div>
