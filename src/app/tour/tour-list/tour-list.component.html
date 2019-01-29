@@ -1,6 +1,8 @@
 <mat-list >
   <div *ngFor="let tour of tours" >
-    <app-tour [tour]="tour"></app-tour>
+    <app-tour [tour]="tour" routerLink= "{{tour.tourId}}" ></app-tour>
     <mat-divider></mat-divider>
   </div>
 </mat-list>
+
+<router-outlet></router-outlet>

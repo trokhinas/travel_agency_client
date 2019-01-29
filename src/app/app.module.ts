@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import {HttpClientModule} from '@angular/common/http';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material';
@@ -13,13 +14,15 @@ import {MatListModule} from '@angular/material';
 import { TourComponent } from './tour/tour.component';
 import { TourListComponent } from './tour/tour-list/tour-list.component';
 import { TourDetailsComponent } from './tour/tour-details/tour-details.component';
+import { TourMenuComponent } from './tour/tour-menu/tour-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TourComponent,
     TourListComponent,
-    TourDetailsComponent
+    TourDetailsComponent,
+    TourMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,8 @@ import { TourDetailsComponent } from './tour/tour-details/tour-details.component
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

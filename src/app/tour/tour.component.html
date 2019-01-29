@@ -7,6 +7,9 @@
         <mat-card-title>
           {{tour.name}}
         </mat-card-title>
+        <mat-card-subtitle *ngIf="tour.location">
+          {{tour.location}}
+        </mat-card-subtitle>
       </mat-card-header>
 
       <mat-card-content *ngIf="tour.description" class="tourInfoDescription">
