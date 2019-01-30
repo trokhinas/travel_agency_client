@@ -1,0 +1,16 @@
+
+
+.formContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.formField {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.formFields {
+  display: inherit;
+  flex-direction: column;
+}

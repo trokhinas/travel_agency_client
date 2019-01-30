@@ -1,0 +1,49 @@
+<div class="formContent">
+  <form [formGroup]="userForm" class="formFields">
+
+    <div class="formField">
+      <mat-form-field>
+        <input matInput placeholder="First name" formControlName="firstName">
+        <mat-error></mat-error>
+      </mat-form-field>
+
+      <mat-form-field >
+        <input matInput placeholder="Last name" formControlName="lastName">
+        <mat-error></mat-error>
+      </mat-form-field>
+    </div>
+
+    <div class="formField">
+      <mat-form-field >
+        <input matInput placeholder="Email" formControlName="email">
+        <mat-error></mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field >
+        <input matInput placeholder="Password" type="password" formControlName="password">
+      </mat-form-field>
+      <mat-error></mat-error>
+    </div>
+
+    <div>
+      <mat-form-field >
+        <input matInput placeholder="Nickname" formControlName="nickname">
+        <mat-error></mat-error>
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field >
+        <input matInput placeholder="Birthday" formControlName="birthday" type="datetime-local">
+        <mat-error></mat-error>
+      </mat-form-field>
+    </div>
+
+
+  </form>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="submit()" [disabled]="userForm.invalid">Submit </button>
+    <button mat-raised-button color="primary" (click)="back()"  >Back   </button>
+  </mat-card-actions>
+</div>
