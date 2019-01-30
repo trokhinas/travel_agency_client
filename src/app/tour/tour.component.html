@@ -12,9 +12,15 @@
         </mat-card-subtitle>
       </mat-card-header>
 
-      <mat-card-content *ngIf="tour.description" class="tourInfoDescription">
+      <mat-card-content *ngIf="tour.description else noDesc" class="tourInfoDescription">
         Описание: {{tour.description}}
       </mat-card-content>
+
+      <ng-template #noDesc>
+        <mat-card-content>
+          Описание отсутствует.
+        </mat-card-content>
+      </ng-template>
 
       <mat-card-footer class="tourInfoFooter">
         <div>

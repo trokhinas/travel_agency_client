@@ -11,7 +11,7 @@ import {switchMap} from 'rxjs/operators';
   styleUrls: ['./tour-details.component.scss']
 })
 export class TourDetailsComponent implements OnInit {
-  private tour: Tour;
+  public tour: Tour;
 
   constructor(private tourService: TourService,
               private router: ActivatedRoute,
