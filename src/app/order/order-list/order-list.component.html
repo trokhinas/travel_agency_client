@@ -1,0 +1,12 @@
+<mat-list *ngIf="orders !== undefined && orders.length != 0 else noOrders">
+  <div *ngFor="let order of orders" >
+    <app-order [order]="order"></app-order>
+    <mat-divider></mat-divider>
+  </div>
+</mat-list>
+
+<ng-template #noOrders>
+  На данный момент у вас нет заказов.
+</ng-template>
+
+<router-outlet></router-outlet>
