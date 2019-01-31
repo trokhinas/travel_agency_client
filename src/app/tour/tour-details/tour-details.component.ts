@@ -4,6 +4,8 @@ import {ActivatedRoute, Params} from '@angular/router';
 import {PlatformLocation} from '@angular/common';
 import {Tour} from '../Tour';
 import {switchMap} from 'rxjs/operators';
+import {OrderService} from '../../order/order.service';
+import {computeStyle} from '@angular/animations/browser/src/util';
 
 @Component({
   selector: 'app-tour-details',
@@ -11,9 +13,11 @@ import {switchMap} from 'rxjs/operators';
   styleUrls: ['./tour-details.component.scss']
 })
 export class TourDetailsComponent implements OnInit {
-  public tour: Tour;
+  public _tour: Tour;
+  public isOrdered: boolean;
 
   constructor(private tourService: TourService,
+              private orderService: OrderService,
               private router: ActivatedRoute,
               private location: PlatformLocation) { }
 
@@ -24,14 +28,22 @@ export class TourDetailsComponent implements OnInit {
   private getTour() {
     this.router.params
       .pipe(switchMap((params: Params) => this.tourService.getTour(params['id'])))
-      .subscribe(response => this.tour = response);
+      .subscribe(response => {
+        this._tour = response as Tour;
+        this.isTourOrderedByUser();
+      });
   }
   private back() {
     this.location.back();
   }
-  // заглушка проверки на то, участвует ли пользователь уже в этом туре
+
   private isTourOrderedByUser() {
-    return null;
+    this.orderService
+      .getAllOrders()
+      .subscribe( orders => {
+        this.isOrdered = orders
+          .find(order => order.tourId === this._tour.tourId) !== undefined;
+      });
   }
 
 }

@@ -1,15 +1,14 @@
 <!--Пока будет такая заглушка вместо более детального описания тура-->
-<div class="tourInfoDetails" *ngIf="tour">
-  <app-tour [tour]="tour"></app-tour>
+<div class="tourInfoDetails" *ngIf="_tour">
+  <app-tour [tour]="_tour"></app-tour>
   <div class="tourInfoActions">
-    <button mat-button
-            *ngIf="!isTourOrderedByUser; else cancel"
-            [disabled]="!tour.isAvailable">Регистрация</button>
+    <button mat-raised-button
+            *ngIf="!isOrdered; else cancel"
+            [disabled]=!_tour.isAvailable()>Регистрация</button>
     <ng-template #cancel>
-      <button mat-button
-              [disabled]="!tour.checkDate">Отменить регистрацию</button>
+      <button mat-raised-button
+              [disabled]="_tour.isGoing()">Отменить регистрацию</button>
     </ng-template>
-
   </div>
 </div>
 

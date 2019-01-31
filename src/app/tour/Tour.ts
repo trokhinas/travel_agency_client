@@ -7,12 +7,22 @@ export class Tour {
   endDate: Date;
   countLimit: number;
 
+
   public isAvailable(): boolean {
-    return this.checkDate() && this.checkLimit();
+    const a = this.checkLimit();
+    const b = !this.isGoing();
+
+    console.log('limit ' + a);
+    console.log('going ' + b);
+    return a && b;
   }
-  public checkDate(): boolean {
+  public isGoing(): boolean {
     const currentDate = new Date();
-    return this.startDate >= currentDate;
+    return this.startDate <= currentDate && !this.isFinished();
+  }
+  public isFinished(): boolean {
+    const currentDate = new Date();
+    return currentDate > this.endDate;
   }
   public checkLimit(): boolean {
     return this.countLimit > 0;
