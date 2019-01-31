@@ -4,8 +4,14 @@ import {TourListComponent} from './tour/tour-list/tour-list.component';
 import {TourDetailsComponent} from './tour/tour-details/tour-details.component';
 import {TourMenuComponent} from './tour/tour-menu/tour-menu.component';
 import {ProfileComponent} from './user/profile/profile.component';
+import {OrderListComponent} from './order/order-list/order-list.component';
 
 const routes: Routes = [
+  {
+    path: '',
+    redirectTo: '/tours',
+    pathMatch: 'full'
+  },
   {
     path: 'tours',
     component: TourMenuComponent
@@ -17,6 +23,10 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent
+  },
+  {
+    path: 'orders',
+    component: OrderListComponent
   }
 ];
 

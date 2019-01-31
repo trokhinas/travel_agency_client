@@ -23,6 +23,8 @@ import { TourDetailsComponent } from './tour/tour-details/tour-details.component
 import { TourMenuComponent } from './tour/tour-menu/tour-menu.component';
 import { UserComponent } from './user/user.component';
 import { ProfileComponent } from './user/profile/profile.component';
+import { OrderComponent } from './order/order.component';
+import { OrderListComponent } from './order/order-list/order-list.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { ProfileComponent } from './user/profile/profile.component';
     TourMenuComponent,
     UserComponent,
     ProfileComponent,
+    OrderComponent,
+    OrderListComponent
   ],
   imports: [
     BrowserModule,
