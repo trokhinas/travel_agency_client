@@ -74,6 +74,7 @@ export class UserComponent implements OnInit {
     this.location.back();
   }
   private submit() {
+    console.log('SUBMIT', this.user);
     this.userService
       .updateUser(this.user)
       .subscribe(() => this.back());
